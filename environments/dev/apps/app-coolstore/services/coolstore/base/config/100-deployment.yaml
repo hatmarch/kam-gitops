@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/name: coolstore
+    app.kubernetes.io/part-of: app-coolstore
+  name: coolstore
+  namespace: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: coolstore
+      app.kubernetes.io/part-of: app-coolstore
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app.kubernetes.io/name: coolstore
+        app.kubernetes.io/part-of: app-coolstore
+    spec:
+      containers:
+      - image: nginxinc/nginx-unprivileged:latest
+        imagePullPolicy: Always
+        name: coolstore
+        ports:
+        - containerPort: 8080
+        resources: {}
+      serviceAccountName: default
+status: {}
