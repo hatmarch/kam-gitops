@@ -36,7 +36,7 @@ spec:
   project: default
   source:
     path: config/argocd
-    repoURL: https://github.com/hatmarch/kam-gitops.git
+    repoURL: https://gitea-argocd-demo-cicd.apps.cluster-2380.2380.sandbox810.opentlc.com/gogs/kam-gitops.git
   syncPolicy:
     automated:
       prune: true
